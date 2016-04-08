@@ -1,6 +1,9 @@
 package com.example.controller;
 
-import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,8 +49,13 @@ public class LoginController
 		return returnUrl;
 	}
 	@RequestMapping("admin.do")
-	public String admin()
+	public String admin(HttpServletResponse response) throws IOException
 	{
+		PrintWriter writer = response.getWriter();
+		writer.println("");
+		
+		
+		
 		return "admin";
 	}
 }
