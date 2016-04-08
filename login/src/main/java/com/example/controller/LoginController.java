@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.common.Msg;
 import com.example.dao.MemberDaoImpl;
 import com.example.model.Member;
 
@@ -49,15 +50,9 @@ public class LoginController
 		return returnUrl;
 	}
 	@RequestMapping("admin.do")
-	public String admin(HttpServletResponse response) throws IOException
+	public String admin() throws IOException
 	{
-		response.setCharacterEncoding("UTF-8");
-		
-		PrintWriter writer = response.getWriter();
-		
-		writer.println("<script> alert('111'); </script>");
-
-		writer.flush();
+		Msg.alert();
 		
 		return "admin";
 	}
