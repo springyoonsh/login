@@ -51,10 +51,13 @@ public class LoginController
 	@RequestMapping("admin.do")
 	public String admin(HttpServletResponse response) throws IOException
 	{
+		response.setCharacterEncoding("UTF-8");
+		
 		PrintWriter writer = response.getWriter();
-		writer.println("");
 		
-		
+		writer.println("<script> alert('111'); </script>");
+
+		writer.flush();
 		
 		return "admin";
 	}
